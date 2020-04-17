@@ -1,0 +1,57 @@
+.upload {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+
+  &__input {
+    //background: url("../../img/input-file.jpg")no-repeat 0 0
+    position: relative;
+    width: 67px;
+    height: 67px;
+    text-indent: -9999px;
+    border: 2px solid var(--red);
+    outline: 0;
+    cursor: pointer;
+  }
+
+  &__list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+
+    li {
+      display: block;
+      max-width: 100px;
+      margin-right: 5px;
+    }
+  }
+
+  &--one {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__img-wrap {
+    max-width: 200px;
+    margin-left: 10px;
+  }
+}
+//************ multi upload img
+//<div class="upload">
+//<input id="js-upload" class="upload__input" type="file" name="images"  accept="image/jpeg,image/png">
+//<ul id="js-upload__list" class="upload__list"></ul>
+//</div>
+// =============== END multi upload img
+
+// =============== upload img
+//<div class="upload upload--one">
+//<input class="js-upload-one upload__input" type="file" name="images" onchange="previewFile()"  accept="image/jpeg,image/png">
+//<div class="upload__img">
+//<img src="" alt="" class="js-upload__img">
+//</div>
+//</div>
+// =============== END upload img

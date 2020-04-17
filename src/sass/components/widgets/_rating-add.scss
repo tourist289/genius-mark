@@ -1,0 +1,66 @@
+.stars {
+  --color_active: #de8711;
+  --color_checked: #deb217;
+
+  display: inline-flex;
+  flex-direction: row-reverse;
+  width: 110px;
+
+  .icon-star {
+    width: 14px;
+  }
+
+  &__input {
+    &:checked {
+      ~ .stars__label svg {
+        color: var(--color_checked);
+        transition: all .25s;
+      }
+    }
+  }
+
+  &__label {
+    margin-right: 6px;
+    color: #d9d9d9;
+    transition: all .2s;
+
+    &:hover {
+      transform: rotate(-15deg) scale(1.3);
+    }
+  }
+
+  &:not(:checked) .stars__label:hover {
+    svg {
+      color: var(--color_active);
+    }
+
+    ~ .stars__label {
+      svg {
+        color: var(--color_active);
+      }
+    }
+  }
+}
+
+/*<span class="stars">
+  <input class="stars__input hide-elem" id="star-1" type="radio" name="star"/>
+  <label class="stars__label" for="star-1">
+    <svg class="icon icon-star" viewBox="0 0 14 14"><path d="M13.696 6.372a.998.998 0 0 0 .254-1.03.998.998 0 0 0-.81-.683l-3.39-.492a.443.443 0 0 1-.334-.243L7.901.854a.998.998 0 0 0-.9-.56.998.998 0 0 0-.9.56l-1.517 3.07a.443.443 0 0 1-.334.243L.86 4.66a.998.998 0 0 0-.81.683.998.998 0 0 0 .254 1.03l2.452 2.39a.444.444 0 0 1 .128.393l-.578 3.375a.983.983 0 0 0 .219.814c.298.356.82.464 1.237.245l3.032-1.594a.454.454 0 0 1 .413 0l3.031 1.594a.994.994 0 0 0 .467.117 1.007 1.007 0 0 0 .99-1.176l-.58-3.375a.444.444 0 0 1 .129-.393l2.452-2.391z" fill="currentColor"/></svg>
+  </label>
+  <input class=" stars__input hide-elem" id="star-2" type="radio" name="star"/>
+  <label class="stars__label" for="star-2">
+    <svg class="icon icon-star" viewBox="0 0 14 14"><path d="M13.696 6.372a.998.998 0 0 0 .254-1.03.998.998 0 0 0-.81-.683l-3.39-.492a.443.443 0 0 1-.334-.243L7.901.854a.998.998 0 0 0-.9-.56.998.998 0 0 0-.9.56l-1.517 3.07a.443.443 0 0 1-.334.243L.86 4.66a.998.998 0 0 0-.81.683.998.998 0 0 0 .254 1.03l2.452 2.39a.444.444 0 0 1 .128.393l-.578 3.375a.983.983 0 0 0 .219.814c.298.356.82.464 1.237.245l3.032-1.594a.454.454 0 0 1 .413 0l3.031 1.594a.994.994 0 0 0 .467.117 1.007 1.007 0 0 0 .99-1.176l-.58-3.375a.444.444 0 0 1 .129-.393l2.452-2.391z" fill="currentColor"/></svg>
+  </label>
+  <input class=" stars__input hide-elem" id="star-3" type="radio" name="star"/>
+  <label class="stars__label" for="star-3">
+    <svg class="icon icon-star" viewBox="0 0 14 14"><path d="M13.696 6.372a.998.998 0 0 0 .254-1.03.998.998 0 0 0-.81-.683l-3.39-.492a.443.443 0 0 1-.334-.243L7.901.854a.998.998 0 0 0-.9-.56.998.998 0 0 0-.9.56l-1.517 3.07a.443.443 0 0 1-.334.243L.86 4.66a.998.998 0 0 0-.81.683.998.998 0 0 0 .254 1.03l2.452 2.39a.444.444 0 0 1 .128.393l-.578 3.375a.983.983 0 0 0 .219.814c.298.356.82.464 1.237.245l3.032-1.594a.454.454 0 0 1 .413 0l3.031 1.594a.994.994 0 0 0 .467.117 1.007 1.007 0 0 0 .99-1.176l-.58-3.375a.444.444 0 0 1 .129-.393l2.452-2.391z" fill="currentColor"/></svg>
+  </label>
+  <input class=" stars__input hide-elem" id="star-4" type="radio" name="star"/>
+  <label class="stars__label" for="star-4">
+    <svg class="icon icon-star" viewBox="0 0 14 14"><path d="M13.696 6.372a.998.998 0 0 0 .254-1.03.998.998 0 0 0-.81-.683l-3.39-.492a.443.443 0 0 1-.334-.243L7.901.854a.998.998 0 0 0-.9-.56.998.998 0 0 0-.9.56l-1.517 3.07a.443.443 0 0 1-.334.243L.86 4.66a.998.998 0 0 0-.81.683.998.998 0 0 0 .254 1.03l2.452 2.39a.444.444 0 0 1 .128.393l-.578 3.375a.983.983 0 0 0 .219.814c.298.356.82.464 1.237.245l3.032-1.594a.454.454 0 0 1 .413 0l3.031 1.594a.994.994 0 0 0 .467.117 1.007 1.007 0 0 0 .99-1.176l-.58-3.375a.444.444 0 0 1 .129-.393l2.452-2.391z" fill="currentColor"/></svg>
+  </label>
+  <input class=" stars__input hide-elem" id="star-5" type="radio" name="star"/>
+  <label class="stars__label" for="star-5">
+    <svg class="icon icon-star" viewBox="0 0 14 14"><path d="M13.696 6.372a.998.998 0 0 0 .254-1.03.998.998 0 0 0-.81-.683l-3.39-.492a.443.443 0 0 1-.334-.243L7.901.854a.998.998 0 0 0-.9-.56.998.998 0 0 0-.9.56l-1.517 3.07a.443.443 0 0 1-.334.243L.86 4.66a.998.998 0 0 0-.81.683.998.998 0 0 0 .254 1.03l2.452 2.39a.444.444 0 0 1 .128.393l-.578 3.375a.983.983 0 0 0 .219.814c.298.356.82.464 1.237.245l3.032-1.594a.454.454 0 0 1 .413 0l3.031 1.594a.994.994 0 0 0 .467.117 1.007 1.007 0 0 0 .99-1.176l-.58-3.375a.444.444 0 0 1 .129-.393l2.452-2.391z" fill="currentColor"/></svg>
+  </label>
+</span>*/

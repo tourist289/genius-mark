@@ -1,0 +1,51 @@
+.nav{
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.nav__link{
+	color: var(--text);
+	position: relative;
+	display: flex;
+	align-items: center;
+	z-index: 1;
+	padding-bottom: 8px;
+
+	&:after{
+		content: ' ';
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		display: block;
+		width: 0;
+		height: 2px;
+		border-radius: 20px;
+		background: var(--accent);
+		transition: all 0.25s ease-in-out;
+	}
+
+	&:hover, &:focus, &:active{
+		color: var(--text);
+
+		&:after{
+			width: 75%;
+			z-index: -1;
+			transition-duration: 0.5s;
+		}
+	}
+
+	svg{
+		color: var(--accent);
+		margin-left: 11px;
+	}
+
+	&--non{
+		&:after{
+			height: 0;
+			background: transparent;
+		}
+	}
+}

@@ -1,0 +1,30 @@
+label, button, input, select{
+  cursor: pointer;
+}
+
+label {
+  color: var(--input__label-text-color);
+}
+
+input{
+  outline: var(--outline);
+  color: var(--input__text-color);
+  border: 1px solid var(--input__border-color);
+
+  &[type=text],
+  &[type=email],
+  &[type=tel]{
+    &:required:valid{
+      color: var(--input__text-color);
+    }
+  }
+}
+
+textarea{
+  resize: none;
+  border: 1px solid var(--input__border-color);
+
+  &:required:valid {
+    color: var(--input__text-color);
+  }
+}

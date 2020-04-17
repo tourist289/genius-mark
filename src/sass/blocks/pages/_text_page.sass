@@ -1,0 +1,93 @@
+.text_page
+	color: $text
+	h1, h2, h3, h4, h5
+		color: $text
+		font-weight: bold
+		margin-bottom: 17px
+	h1
+		font-weight: 300
+		font-size: 24px
+		margin-bottom: $mbL
+	h2
+		font-size: 21px
+	h3
+		font-size: 16px
+	h4
+		font-size: 15px
+	h5
+		font-size: 14px
+	p
+		margin-bottom: $mb
+		font-size: 14px
+		line-height: 1.7
+	a
+		color: $accent
+		&:hover, &:focus, &:active
+			text-decoration: underline
+	ul
+		margin-bottom: $mb
+		li
+			padding-left: 26px
+			position: relative
+			margin-bottom: 17px
+			&:before
+				content: ''
+				position: absolute
+				width: 8px
+				height: 8px
+				border-radius: 50%
+				left: 1px
+				top: 6px
+				background: $accent
+	ol
+		display: flex
+		flex-direction: column
+		counter-reset: item
+		margin-bottom: $mb
+		li
+			position: relative
+			padding: 6px 0 6px 29px
+			color: $text-w
+			&:before
+				content: counter(item)'.'
+				counter-increment: item
+				position: absolute
+				left: 0
+				top: 50%
+				transform: translateY(-50%)
+				font: 700 14px/16px
+				color: #000
+	table
+		border-spacing: 0 0
+		border-collapse: collapse
+		width: 100%
+		caption
+			font-weight: bold
+			margin-bottom: 17px
+			text-align: left
+			font-size: 15px
+		tr,td,th
+			padding: 0
+			margin: 0
+			text-align: left
+		td, th
+			border: 1px solid $border
+			text-align: left
+			padding: 10px
+			font-size: 13px
+		th
+			line-height: 1.7
+			font-size: 15px
+		tr:nth-child(even)
+			background-color: #f9f9f8
+@media only screen and (max-width : 766px)
+	.table_wrap
+		position: relative
+		overflow-y: auto
+		padding-bottom: 10px
+		table
+			width: 765px
+
+//============ wrap table for scroll
+	$('.text_page').find('table').wrapAll("<div class='table_wrap'></div>");
+//============ END wrap table for scroll

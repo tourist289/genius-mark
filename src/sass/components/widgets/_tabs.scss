@@ -1,0 +1,52 @@
+.tabs {
+  --bg: #f4dad1;
+  --bg_active: #2f2c2f;
+
+  &__item {
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all .25s var(--ease-in-cubic);
+
+    &.active {
+      z-index: 1;
+      position: relative;
+      visibility: visible;
+      display: block;
+      height: 100%;
+      opacity: 1;
+      transition: all .25s var(--ease-in-cubic);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 0;
+
+    li {
+      width: 83px;
+      padding: 10px 0;
+      background: var(--bg);
+      border-radius: 4px;
+      color: #000;
+      cursor: pointer;
+      text-align: center;
+
+      &.active {
+        background: var(--bg_active);
+      }
+    }
+  }
+}
+/*<div class="js-tabs tabs">
+  <div class="js-tabs__nav tabs__nav tabs__nav--active">Ship</div>
+  <div class="js-tabs__nav tabs__nav">Cargo</div>
+  <div class="js-tabs__nav tabs__nav">Sale</div>
+  <div class="js-tabs__item tabs__item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, odio!</div>
+  <div class="js-tabs__item tabs__item"><img src="http://placehold.it/320x340"></div>
+  <div class="js-tabs__item tabs__item"></div>
+</div>*/

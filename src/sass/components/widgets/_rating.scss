@@ -1,0 +1,40 @@
+.rating {
+  display: flex;
+}
+
+.rating__item {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  padding: 0;
+  margin-right: 10px;
+  text-align: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #8d8d8d;
+  }
+}
+
+.rating__item--active {
+  transition: color 0.25s;
+
+  svg {
+    color: #ff8a00;
+  }
+}
+
+/*<p class="js-rating rating">
+  <input hidden="hidden" value="4" name="rating" min="1" max="5">
+  <span class="rating__item js-rating__star">
+  <svg class="icon icon-star" viewBox="0 0 14 14"><path d="M13.696 6.372a.998.998 0 0 0 .254-1.03.998.998 0 0 0-.81-.683l-3.39-.492a.443.443 0 0 1-.334-.243L7.901.854a.998.998 0 0 0-.9-.56.998.998 0 0 0-.9.56l-1.517 3.07a.443.443 0 0 1-.334.243L.86 4.66a.998.998 0 0 0-.81.683.998.998 0 0 0 .254 1.03l2.452 2.39a.444.444 0 0 1 .128.393l-.578 3.375a.983.983 0 0 0 .219.814c.298.356.82.464 1.237.245l3.032-1.594a.454.454 0 0 1 .413 0l3.031 1.594a.994.994 0 0 0 .467.117 1.007 1.007 0 0 0 .99-1.176l-.58-3.375a.444.444 0 0 1 .129-.393l2.452-2.391z" fill="currentColor"/></svg>
+  </span>
+</p>*/
+

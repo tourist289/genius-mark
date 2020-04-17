@@ -1,0 +1,54 @@
+.anchor-list {
+  position: fixed;
+  top: 50%;
+  right: 30px;
+  display: inline-flex;
+  flex-direction: column;
+  z-index: 5;
+  transform: translateY(-50%);
+  transition: opacity 400ms 1100ms;
+
+  &--hidden {
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 400ms;
+  }
+
+}
+
+.anchor-list__item + .anchor-list__item {
+  position: relative;
+  margin-top: 8vh;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 50%;
+    bottom: 100%;
+    width: 2px;
+    height: calc(8vh - 10px);
+    margin-bottom: 5px;
+    margin-left: -1px;
+    background-color: #000;
+  }
+}
+
+.anchor-list__link {
+  opacity: 0.5;
+  transition: opacity 200ms;
+
+  &:hover, &.active {
+    opacity: 1;
+  }
+}
+
+//<ul class="js-anchor-list anchor-list">
+//    <li class="anchor-list__item"><a class="js-anchor__item anchor-list__link" href=".section-1">anchor 1</a></li>
+//    <li class="anchor-list__item"><a class="js-anchor__item anchor-list__link" href=".section-2">anchor 2</a></li>
+//    <li class="anchor-list__item"><a class="js-anchor__item anchor-list__link" href=".section-3">anchor 3</a></li>
+//    <li class="anchor-list__item"><a class="js-anchor__item anchor-list__link" href=".section-4">anchor 4</a></li>
+//</ul>
