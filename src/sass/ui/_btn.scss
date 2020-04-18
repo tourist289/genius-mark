@@ -1,60 +1,59 @@
 .btn {
-  position: relative;
-  z-index: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 130px;
-  height: 60px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border: 0;
-  border-radius: 20px;
-  outline: none;
-  background: var(--btn);
-  font-family: var(--font_text);
-  font-weight: normal;
-  font-size: 13px;
+  width: 224px;
+  height: 46px;
+  font-family: Karla;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 20px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  color: #fff;
+  cursor: pointer;
   transition: background 0.25s var(--ease-in-quad);
-
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px;
   &:visited {
     color: #fff;
   }
 
   &:hover, &:focus {
-    background: var(--btn_hover);
+    //background: var(--btn_hover);
     transition: background 0.25s var(--ease-in-quad);
     color: #ffffff;
+    outline: none;
   }
 
   &:active {
     background: var(--btn_active);
   }
-}
+  &--clear {
+    border: 1px solid $yellow;
+    box-sizing: border-box;
+    border-radius: 50px;
+    background: transparent;
+    color: $yellow;
+    transition: background 0.25s var(--ease-in-quad) border .25s var(--ease-out-quad);
 
-/*--------- Swipe ---------------*/
-.btn-swipe {
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: block;
-    width: 0;
-    height: 100%;
-    background: var(--btn);
-    transition: 0.3s ease-in-out;
-  }
-
-  &:hover {
-    color: #fff;
-
-    &:after {
-      z-index: -5;
-      width: 100%;
-      transition-duration: 0.5s;
+    &:hover {
+      border: 1px solid transparent;
+      background: $yellow;
+      transition: background 0.25s var(--ease-in-quad) border .25s var(--ease-out-quad);
     }
   }
+  &--def {
+    background: $yellow;
+    //border: 1px solid #FFD601;
+    box-sizing: border-box;
+    border-radius: 50px;
+    transition: background 0.25s var(--ease-in-quad) border .25s var(--ease-out-quad);
+    &:hover {
+      border: 1px solid $yellow;
+      background: transparent;
+      transition: background 0.25s var(--ease-in-quad) border .25s var(--ease-out-quad);
+    }
+  }
+
 }
+

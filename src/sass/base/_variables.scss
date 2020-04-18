@@ -1,23 +1,23 @@
 $f-faw: Font Awesome\ 5 Free;
 $f-fab: Font Awesome\ 5 Brands;
 
-$font-text: 'OpenSans-ex', sans-serif;
-$font-title: 'OpenSans-ex', sans-serif;
+//$font-text: 'OpenSans-ex', sans-serif;
+//$font-title: 'OpenSans-ex', sans-serif;
 
 :root {
   --font_text: 'Lato', sans-serif;
   --font_title: 'Lato', sans-serif;
 
-  --accent: #6fc0b9;
-  --accent_hover: #81d8d0;
+  --accent: #fff;
+  --accent_hover: #000;
 
   --bg_color: #fff;
   --title_color: #333;
 
   // buttons
-  --btn: linear-gradient(10.65deg, #F57E80 0%, #D43535 119.64%);
-  --btn_hover: linear-gradient(10.65deg, #F57E80 0%, #D43535 119.64%);;
-  --btn_active: linear-gradient(10.65deg, #F57E80 0%, #D43535 119.64%);;
+  //--btn: linear-gradient(10.65deg, #F57E80 0%, #D43535 119.64%);
+  //--btn_hover: linear-gradient(10.65deg, #F57E80 0%, #D43535 119.64%);;
+  //--btn_active: linear-gradient(10.65deg, #F57E80 0%, #D43535 119.64%);;
 
   --text: #333;
   --text-w: rgba(51, 51, 51, 0.5);
@@ -60,12 +60,12 @@ $font-title: 'OpenSans-ex', sans-serif;
 }
 
 
-$bg-accent: #fff;
+$yellow: #FFD601;
 $bg-accent-2: #ececec;
 
 
-$text: #333;
-$text-w:  rgba(51, 51, 51, 0.5);
+$text: #000;
+$text-w:  #fff;
 
 $placeholder: rgba(51, 51, 51, 0.5);
 $outline: #f93e56;

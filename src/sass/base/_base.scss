@@ -4,7 +4,8 @@
 
 * {
   box-sizing: border-box;
-
+  margin: 0;
+  padding: 0;
   @include placeholder{
     color: $placeholder;
     opacity: 1;
@@ -51,7 +52,7 @@ img {
     overflow: hidden;
   }
 }
-
+// троеточие
 .ellipsis {
   max-width: 200px;
   overflow: hidden;
