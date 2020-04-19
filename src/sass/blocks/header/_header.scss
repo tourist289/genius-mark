@@ -63,13 +63,7 @@ header {
 	}
 
 	.scroll-down {
-		font-family: TT Norms;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 16px;
-		line-height: 1;
-		letter-spacing: 0px;
-		color: $text-w;
+
 		mix-blend-mode: normal;
 		cursor: pointer;
 		position: relative;
@@ -79,6 +73,15 @@ header {
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 20px;
+		p {
+			font-family: TT Norms;
+			font-style: normal;
+			font-weight: normal;
+			font-size: 16px;
+			line-height: 1;
+			letter-spacing: 0px;
+			color: $text-w;
+		}
 		.hr {
 			margin-left: 30px;
 			width: 80px;
