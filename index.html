@@ -18,7 +18,7 @@
 	<link rel="apple-touch-icon" sizes="114x114" href="assets/img/favicon/apple-touch-icon-114x114.png">
 
 
-	<link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+	<!--<link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">-->
 
 	<!--<script src="assets/libs/jquery-3.2.1.min.js"></script>-->
 	<!-- Chrome, Firefox OS and Opera -->
@@ -30,7 +30,11 @@
 
 	<style>body{opacity:0;overflow-x: hidden;}html{background-color:#fff;}</style>
 
-    <link rel="stylesheet" href="dist/css/main.css">
+	<link rel="stylesheet" href="dist/css/intlTelInput.css">
+
+	<link rel="stylesheet" href="dist/css/main.css">
+
+	<script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -59,7 +63,10 @@
 				<span>вместе с опытным партнером</span>
 			</h1>
 
-			<div class="scroll-down">
+
+
+
+			<div class="scroll-down js-scroll" data-href="#m1">
 				<p>Узнать <br> больше</p>
 				<span class="hr"></span>
 			</div>
@@ -73,7 +80,7 @@
 	  <div class="block block--light block--today">
 		  <div class="container pl--140">
 
-			  <div class="badge">geniusmarketing</div>
+			  <div id="m1" class="badge">geniusmarketing</div>
 
 			  <p class="w700">это образовательная компания для предпринимателей и специалистов по привлечению клиентов и увеличению продаж с помощью интернета.</p>
 			  <h3 class="w860">На сегодня в компании более 70 сотрудников и 62.000+ клиентов из 118 стран мира.</h3>
@@ -264,18 +271,34 @@
 
 
 			  </section>
-
-
-
 		  </div>
 	  </div>
 
 
 	  <div class="block block--light block--goals">
 		<div class="container">
-			<h2>Наши цели</h2>
-			<h5>по совместному бизнесу в разных странах</h5>
-			<button class="btn btn--def btn--big">Оставить заявку на&nbsp;партнерство</button>
+			<div class="graf">
+				<span class="pop">Население страны</span>
+				<div class="img-wrapper">
+					<img src="/dist/img/chart.png" alt="">
+					<div class="pop-wpapper">
+						<span>10-20 млн</span>
+						<span>30-40 млн</span>
+						<span>50+ млн</span>
+					</div>
+				</div>
+
+			</div>
+
+			<div>
+				<h2>Наши цели</h2>
+				<h5>по совместному бизнесу в разных странах</h5>
+				<button class="btn btn--def btn--big">Оставить заяву на&nbsp;партнерство</button>
+			</div>
+
+
+
+
 		</div>
 	  </div>
 
@@ -313,7 +336,7 @@
 
 	  <section class="block block--light block--plans">
 		  <div class="container">
-			  <h2 class="w1000">В каких нишах мы планируем работать</h2>
+			  <h2 class="w860">В каких нишах мы планируем работать</h2>
 
 			  <div class="circles w1000">
 				  <div>
@@ -479,20 +502,28 @@
 
 
 	  <section class="block block--dark block--form">
+		  <div class="title-wrapper">
+			  <div class="container">
+				  <h3>Готовы стать партнером GeniusMarketing и Олеся Тимофеева в вашей стране?</h3>
+			  </div>
+		  </div>
+
+
 		  <div class="container">
-				<h3>Готовы стать партнером GeniusMarketing и Олеся Тимофеева в вашей стране?</h3>
+
 			  <h6>Оставьте заявку в форме ниже и заполните простую анкету на следующем шаге.</h6>
 
 
 			  <form action="">
-				  <fieldset>
+				  <div class="fieldset">
 					  <input type="text" placeholder="Ваше имя и фамилия">
-					  <input type="tel">
+					  <input type="tel" id="telephone">
+
 					  <input type="email" placeholder="E-mail">
-				  </fieldset>
+				  </div>
 
 
-				  <button class="btn btn--def">CТАТЬ ПАРТНЕРОМ GENIUSMARKETING</button>
+				  <button class="btn btn--def btn--big">Стать партнером GeniusMarketing</button>
 			  </form>
 			  <p >Мы обработаем все анкеты и свяжемся с вами для обсуждения деталей.</p>
 
@@ -507,7 +538,40 @@
 
 
 
-<script src="dist/js/app.js"></script>
+  <!-- Use as a Vanilla JS plugin -->
+  <script src="src/js/components/utils.js"></script>
+  <script src="src/js/components/intlTelInput.js"></script>
+
+  <script>
+      // Vanilla Javascript
+      var input = document.querySelector("#telephone");
+      window.intlTelInput(input,({
+          // options here
+          autoPlaceholder:"polite",
+          initialCountry: "ua"
+
+      }));
+  </script>
+
+
+
+  <!--<script src="dist/js/app.js"></script>-->
+
+  <script>
+
+      $('.js-scroll').on( 'click', function(){
+          var el = $(this);
+          var dest = el.attr('data-href'); // получаем направление
+          if(dest !== undefined && dest !== '') { // проверяем существование
+              $('html').animate({
+                      scrollTop: $(dest).offset().top - 100 // прокручиваем страницу к требуемому элементу
+                  }, 600 // скорость прокрутки
+              );
+          }
+          return false;
+      });
+  </script>
+
 
 </body>
 </html>
